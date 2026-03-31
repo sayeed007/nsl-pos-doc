@@ -9,10 +9,11 @@ export const siteConfig = {
     { href: "/sales", label: "Sales Hub" },
     { href: "/pricing", label: "Pricing" },
     { href: "/documents", label: "Documents" },
+    { href: "/demo", label: "Live Demo" },
   ],
   primaryCta: {
-    href: "/product",
-    label: "Explore Product",
+    href: "/demo",
+    label: "Explore Demo",
   },
   footerLinks: [
     { href: "/product", label: "Capabilities" },
@@ -20,5 +21,6 @@ export const siteConfig = {
     { href: "/sales", label: "Sales Ready Pack" },
     { href: "/pricing", label: "Packaging Strategy" },
     { href: "/documents", label: "Source Documents" },
+    { href: "/demo", label: "Live Demo Environment" },
   ],
 } as const;
