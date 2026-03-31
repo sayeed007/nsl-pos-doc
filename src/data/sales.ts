@@ -12,11 +12,41 @@ export const salesPageData = {
     ],
   },
   whyItSells: [
-    "More than a POS: it helps run the retail business",
-    "A clear upgrade from spreadsheets and billing-only tools",
-    "Supports business growth from one outlet to multiple locations",
-    "Combines stock control, promotions, customer tracking, and reporting in one system",
-    "Helps protect revenue through better visibility and better retail discipline",
+    {
+      text: "More than a POS: it helps run the retail business",
+      styles: {
+        card: "bg-blue-500/5 border-blue-500/15 hover:bg-blue-500/10",
+        icon: "bg-blue-500/20 text-blue-700 border-blue-500/30 group-hover:bg-blue-500/30 rounded-full",
+      },
+    },
+    {
+      text: "A clear upgrade from spreadsheets and billing-only tools",
+      styles: {
+        card: "bg-emerald-500/5 border-emerald-500/15 hover:bg-emerald-500/10",
+        icon: "bg-emerald-500/20 text-emerald-700 border-emerald-500/30 group-hover:bg-emerald-500/30 rounded-full",
+      },
+    },
+    {
+      text: "Supports business growth from one outlet to multiple locations",
+      styles: {
+        card: "bg-amber-500/5 border-amber-500/15 hover:bg-amber-500/10",
+        icon: "bg-amber-500/20 text-amber-700 border-amber-500/30 group-hover:bg-amber-500/30 rounded-full",
+      },
+    },
+    {
+      text: "Combines stock control, promotions, customer tracking, and reporting in one system",
+      styles: {
+        card: "bg-rose-500/5 border-rose-500/15 hover:bg-rose-500/10",
+        icon: "bg-rose-500/20 text-rose-700 border-rose-500/30 group-hover:bg-rose-500/30 rounded-full",
+      },
+    },
+    {
+      text: "Helps protect revenue through better visibility and better retail discipline",
+      styles: {
+        card: "bg-purple-500/5 border-purple-500/15 hover:bg-purple-500/10",
+        icon: "bg-purple-500/20 text-purple-700 border-purple-500/30 group-hover:bg-purple-500/30 rounded-full",
+      },
+    },
   ],
   tabs: {
     sellingPoints: [
@@ -32,6 +62,7 @@ export const salesPageData = {
       "Helps owners make faster decisions with live business visibility.",
       "Useful for both day-to-day staff operations and owner-level control.",
       "Easy to position as a step up from manual retail management.",
+      "Useful for both staff operations and owner-level management.",
     ],
     conversations: [
       {
@@ -215,16 +246,28 @@ export const salesPageData = {
       name: "Starter",
       audience: "For single-store retailers",
       summary: "Core POS, products, stock tracking, customer records, standard reports",
+      styles: {
+        card: "bg-blue-500/5 border-blue-500/15 hover:bg-blue-500/10",
+        bullet: "bg-blue-500",
+      },
     },
     {
       name: "Growth",
       audience: "For growing multi-store businesses",
       summary: "Multi-location stock, transfers, promotions, loyalty, richer reporting",
+      styles: {
+        card: "bg-emerald-500/5 border-emerald-500/15 hover:bg-emerald-500/10",
+        bullet: "bg-emerald-500",
+      },
     },
     {
       name: "Advanced",
       audience: "For more mature retail operations",
       summary: "Deeper reporting, broader operational control, premium onboarding and support",
+      styles: {
+        card: "bg-purple-500/5 border-purple-500/15 hover:bg-purple-500/10",
+        bullet: "bg-purple-500",
+      },
     },
   ],
   closingLines: [

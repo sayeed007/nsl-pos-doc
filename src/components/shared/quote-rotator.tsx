@@ -19,11 +19,11 @@ export function QuoteRotator({ quotes }: { quotes: string[] }) {
 
   return (
     <Card className="overflow-hidden border-brand/15 bg-hero-aurora p-8">
-      <div className="space-y-4">
+      <div className="space-y-4 flex flex-col justify-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
           Closing lines
         </p>
-        <div className="min-h-28">
+        <div className="">
           <AnimatePresence mode="wait">
             <motion.blockquote
               key={quotes[index]}

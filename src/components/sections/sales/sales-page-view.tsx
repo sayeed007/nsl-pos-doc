@@ -12,6 +12,7 @@ import { SectionShell } from "@/components/shared/section-shell";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SalesTabs } from "@/components/sections/sales/sales-tabs";
+import { cn } from "@/lib/utils";
 
 export function SalesPageView() {
   return (
@@ -35,11 +36,11 @@ export function SalesPageView() {
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {salesPageData.whyItSells.map((item, index) => (
-            <Reveal key={item} delay={index * 0.03}>
-              <Card className="h-full p-5 flex items-center">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
-                  <p className="text-sm leading-6 text-foreground">{item}</p>
+            <Reveal key={item.text} delay={index * 0.03}>
+              <Card className={cn("h-full p-5 flex items-center", item.styles?.card)}>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className={cn("mt-0.5 size-5 shrink-0 text-brand", item.styles?.icon)} />
+                  <p className="text-sm leading-6 text-foreground">{item.text}</p>
                 </div>
               </Card>
             </Reveal>
@@ -107,8 +108,8 @@ export function SalesPageView() {
             <div className="mt-8 grid gap-4">
               {salesPageData.packagingPreview.map((item, index) => (
                 <Reveal key={item.name} delay={index * 0.03}>
-                  <Card className="p-6">
-                    <p className="text-sm font-semibold text-brand">{item.name}</p>
+                  <Card className={cn("p-6", item.styles?.card)}>
+                    <p className={cn("text-sm font-semibold", item.styles?.bullet?.replace('bg-', 'text-'))}>{item.name}</p>
                     <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                       {item.audience}
                     </h3>
@@ -136,45 +137,45 @@ export function SalesPageView() {
           description="The positioning grid mirrors the original sales-ready guardrails so the site stays commercially useful without over-claiming."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <Card className="p-6">
+          <Card className="p-6 bg-emerald-500/5 border-emerald-500/15 hover:bg-emerald-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Best for</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {salesPageData.positioning.bestFor.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-brand" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-emerald-500" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
-          <Card className="p-6">
+          <Card className="p-6 bg-blue-500/5 border-blue-500/15 hover:bg-blue-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Best stage</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {salesPageData.positioning.bestStage.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-highlight" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-blue-500" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
-          <Card className="p-6">
+          <Card className="p-6 bg-amber-500/5 border-amber-500/15 hover:bg-amber-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Replaces</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {salesPageData.positioning.replaces.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-brand" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-amber-500" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
-          <Card className="p-6">
-            <h3 className="font-display text-xl font-semibold text-foreground">Do not target heavily</h3>
+          <Card className="p-6 bg-slate-500/5 border-slate-500/15 hover:bg-slate-500/10">
+            <h3 className="font-display text-xl font-semibold text-foreground">Do not target</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {salesPageData.positioning.doNotTarget.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-muted-foreground" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-slate-500" />
                   <span>{item}</span>
                 </li>
               ))}
