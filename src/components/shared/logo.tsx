@@ -8,7 +8,7 @@ export function Logo() {
         <ScanBarcode className="size-5" strokeWidth={1.9} />
       </span>
       <span className="flex flex-col leading-tight">
-        <span className="font-display text-base font-semibold tracking-tight text-foreground">POS SaaS</span>
+        <span className="font-display text-base font-semibold tracking-tight text-foreground">NSL POS</span>
         <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Retail Control</span>
       </span>
     </Link>
