@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Resolved header background colors for CSS transition interpolation.
+   hsl(var(--x) / alpha) is not animatable; these custom properties provide
+   fully-resolved colour values the transition engine can interpolate. */
+:root {
+  --header-bg-idle: hsla(210, 33%, 98%, 0.55);
+  --header-bg-scrolled: hsla(210, 33%, 98%, 0.85);
+}
+.dark {
+  --header-bg-idle: hsla(223, 39%, 10%, 0.55);
+  --header-bg-scrolled: hsla(223, 39%, 10%, 0.85);
+}
+
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 222 45% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 45% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 45% 12%;
+    --primary: 213 92% 54%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 35% 95%;
+    --secondary-foreground: 222 45% 12%;
+    --muted: 212 34% 94%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 169 74% 41%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 74% 55%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 87%;
+    --input: 215 28% 87%;
+    --ring: 213 92% 54%;
+    --brand: 212 92% 54%;
+    --brand-foreground: 210 40% 98%;
+    --brand-soft: 213 100% 97%;
+    --brand-glow: 188 92% 54%;
+    --highlight: 28 95% 59%;
+    --highlight-foreground: 222 45% 12%;
+    --highlight-soft: 28 100% 96%;
+    --surface-tint: 210 100% 99%;
+    --grid-line: 214 26% 88%;
+    --radius: 1rem;
+    --shadow-soft: 0 10px 24px rgba(15, 23, 42, 0.08);
+    --shadow-panel: 0 24px 64px rgba(15, 23, 42, 0.14);
+    --shadow-glow: 0 18px 50px rgba(14, 165, 233, 0.24);
+  }
+
+  .dark {
+    --background: 223 39% 10%;
+    --foreground: 210 40% 96%;
+    --card: 224 30% 15%;
+    --card-foreground: 210 40% 96%;
+    --popover: 224 30% 15%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 198 93% 60%;
+    --primary-foreground: 224 39% 10%;
+    --secondary: 223 22% 20%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 223 22% 18%;
+    --muted-foreground: 216 18% 70%;
+    --accent: 169 72% 44%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 68% 56%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 18% 24%;
+    --input: 222 18% 24%;
+    --ring: 198 93% 60%;
+    --brand: 198 93% 60%;
+    --brand-foreground: 224 39% 10%;
+    --brand-soft: 199 100% 13%;
+    --brand-glow: 188 92% 54%;
+    --highlight: 30 96% 66%;
+    --highlight-foreground: 224 39% 10%;
+    --highlight-soft: 29 100% 14%;
+    --surface-tint: 222 44% 14%;
+    --grid-line: 222 16% 20%;
+    --shadow-soft: 0 12px 30px rgba(2, 6, 23, 0.38);
+    --shadow-panel: 0 28px 70px rgba(2, 6, 23, 0.5);
+    --shadow-glow: 0 18px 54px rgba(34, 211, 238, 0.18);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--brand) / 0.08), transparent 28%),
+      radial-gradient(circle at top right, hsl(var(--highlight) / 0.08), transparent 24%);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: hsl(var(--brand) / 0.18);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
