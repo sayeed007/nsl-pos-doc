@@ -5,12 +5,12 @@ export const demoPageData = {
     bullets: ["Live testing environment", "Complete role-based access", "Pre-configured sample data"],
   },
   credentials: [
-    {
-      role: "Platform Super Admin",
-      email: "super.admin@tafuripos.com",
-      password: "super.admin.tafuripos",
-      styles: { card: "bg-purple-500/5 border-purple-500/15 hover:bg-purple-500/10", dot: "bg-purple-500" }
-    },
+    // {
+    //   role: "Platform Super Admin",
+    //   email: "super.admin@tafuripos.com",
+    //   password: "super.admin.tafuripos",
+    //   styles: { card: "bg-purple-500/5 border-purple-500/15 hover:bg-purple-500/10", dot: "bg-purple-500" }
+    // },
     {
       role: "Store Owner / Admin",
       email: "admin@tafuri-demo.com",
