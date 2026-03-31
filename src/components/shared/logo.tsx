@@ -1,16 +1,25 @@
 import Link from "next/link";
-import { ScanBarcode } from "lucide-react";
+import Image from "next/image";
 
 export function Logo() {
   return (
-    <Link href="/" className="inline-flex items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-      <span className="flex size-10 items-center justify-center rounded-2xl border border-brand/20 bg-brand/10 text-brand shadow-soft">
-        <ScanBarcode className="size-5" strokeWidth={1.9} />
-      </span>
-      <span className="flex flex-col leading-tight">
-        <span className="font-display text-base font-semibold tracking-tight text-foreground">NSL POS</span>
-        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Retail Control</span>
-      </span>
+    <Link
+      href="/"
+      className="group flex items-center outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-lg transition-all duration-300"
+      aria-label="NSL POS Home"
+    >
+      <div className="relative flex items-center justify-center transition-all duration-500 ease-out group-hover:scale-[1.03] group-active:scale-95">
+        <Image
+          src="/logo/NSL_POS_Root-removebg.png"
+          alt="NSL POS Logo"
+          width={132}
+          height={52}
+          className="h-13 w-auto object-contain transition-all duration-700 ease-in-out group-hover:rotate-1 group-hover:brightness-110"
+          priority
+        />
+        {/* Subtle radial glow that appears on hover */}
+        <div className="absolute inset-x-0 -bottom-2 -z-10 h-1/2 w-full bg-brand/10 blur-xl transition-opacity duration-700 opacity-0 group-hover:opacity-100" />
+      </div>
     </Link>
   );
 }

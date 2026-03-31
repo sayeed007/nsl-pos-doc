@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { motion } from "motion/react";
 
 import { homePageData } from "@/data/home";
 import { CtaBand } from "@/components/shared/cta-band";
@@ -10,10 +13,16 @@ import { SectionShell } from "@/components/shared/section-shell";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 function HeroVisual() {
   return (
-    <div className="relative mx-auto max-w-xl">
+    <motion.div
+      className="relative mx-auto max-w-xl"
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+    >
+      {/* Daily retail control */}
       <Reveal className="relative">
         <Card className="overflow-hidden border-brand/20 bg-card/90 p-6 shadow-panel">
           <div className="space-y-6">
@@ -83,8 +92,10 @@ function HeroVisual() {
           </div>
         </Card>
       </Reveal>
-      <Reveal delay={0.15} className="absolute -bottom-6 -left-6 hidden max-w-xs lg:block">
-        <Card className="border-highlight/20 bg-highlight/10 p-4 shadow-soft">
+
+      {/* Why it matters */}
+      <Reveal delay={0.15} className="absolute -bottom-0 -left-6 hidden min-w-xs lg:block">
+        <Card className="border-highlight/20 bg-highlight/10 p-4 shadow-soft rounded-[12px]">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-highlight">
             Why it matters
           </p>
@@ -93,7 +104,7 @@ function HeroVisual() {
           </p>
         </Card>
       </Reveal>
-    </div>
+    </motion.div>
   );
 }
 
@@ -103,7 +114,7 @@ export function HomePageView() {
       <section className="relative overflow-hidden border-b border-border/60">
         <div className="absolute inset-0 bg-hero-aurora" />
         <div className="absolute inset-0 bg-grid opacity-[0.05]" />
-        <div className="container relative grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
+        <div className="container relative grid gap-12 py-8 sm:py-10 lg:py-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-8">
             <Reveal>
               <Badge variant="outline" className="border-brand/20 bg-background/80 text-brand backdrop-blur">
@@ -142,12 +153,12 @@ export function HomePageView() {
             <Reveal delay={0.12}>
               <div className="grid gap-3 sm:grid-cols-3">
                 {homePageData.hero.supportingPoints.map((point) => (
-                  <div
+                  <Card
                     key={point}
-                    className="rounded-2xl border border-border/70 bg-card/80 px-4 py-3 text-sm leading-6 text-foreground shadow-soft"
+                    className="rounded-[12px] border border-border/70 bg-card/80 px-4 py-3 text-sm leading-6 text-foreground shadow-soft flex items-center"
                   >
                     {point}
-                  </div>
+                  </Card>
                 ))}
               </div>
             </Reveal>
@@ -160,8 +171,8 @@ export function HomePageView() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {homePageData.executiveValueStrip.items.map((item, index) => (
             <Reveal key={item} delay={index * 0.03}>
-              <Card className="h-full p-5">
-                <div className="flex items-start gap-3">
+              <Card className="h-full p-5 flex items-center">
+                <div className="flex items-center gap-3">
                   <CheckCircle2 className="mt-0.5 size-5 text-brand" />
                   <p className="text-sm leading-6 text-foreground">{item}</p>
                 </div>
@@ -180,9 +191,9 @@ export function HomePageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {homePageData.problems.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.04}>
-              <Card className="h-full p-6">
-                <div className="space-y-4">
-                  <IconChip icon={item.icon} />
+              <Card className={cn("h-full p-6", item.styles?.card)}>
+                <div className="space-y-4 flex flex-col items-center text-center">
+                  <IconChip icon={item.icon} className={item.styles?.icon} />
                   <div className="space-y-2">
                     <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
                     <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
@@ -203,9 +214,9 @@ export function HomePageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {homePageData.solution.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.04}>
-              <Card className="h-full p-6">
-                <div className="space-y-4">
-                  <IconChip icon={item.icon} />
+              <Card className={cn("h-full p-6", item.styles?.card)}>
+                <div className="space-y-4 flex flex-col items-center text-center">
+                  <IconChip icon={item.icon} className={item.styles?.icon} />
                   <div className="space-y-2">
                     <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
                     <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
@@ -226,9 +237,9 @@ export function HomePageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {homePageData.value.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.03}>
-              <Card className="h-full p-6">
-                <div className="space-y-4">
-                  <IconChip icon={item.icon} />
+              <Card className={cn("h-full p-6", item.styles?.card)}>
+                <div className="space-y-4 flex flex-col items-start">
+                  <IconChip icon={item.icon} className={item.styles?.icon} />
                   <div className="space-y-2">
                     <h3 className="font-display text-xl font-semibold text-foreground">{item.title}</h3>
                     <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
@@ -246,12 +257,12 @@ export function HomePageView() {
           title={homePageData.audience.title}
           description="The site keeps the audience framing from the pitch deck and the business overview intact."
         />
-        <div className="mt-10 flex gap-4 overflow-x-auto pb-2">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {homePageData.audience.items.map((item, index) => (
-            <Reveal key={item.title} delay={index * 0.03} className="min-w-[260px] flex-1">
-              <Card className="h-full min-w-[260px] p-6">
-                <div className="space-y-4">
-                  <IconChip icon={item.icon} />
+            <Reveal key={item.title} delay={index * 0.03}>
+              <Card className={cn("h-full p-6", item.styles?.card)}>
+                <div className="space-y-4 flex flex-col items-center text-center">
+                  <IconChip icon={item.icon} className={item.styles?.icon} />
                   <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
                 </div>
               </Card>

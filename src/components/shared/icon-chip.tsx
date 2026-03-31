@@ -15,11 +15,11 @@ export function IconChip({
   return (
     <div
       className={cn(
-        "flex size-12 items-center justify-center rounded-2xl border border-brand/15 bg-brand/10 text-brand",
+        "flex size-12 items-center justify-center rounded-2xl border border-brand/15 bg-brand/10 text-brand shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:bg-brand/15",
         className,
       )}
     >
-      <Icon className="size-5" strokeWidth={1.8} />
+      <Icon className="size-5 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.8} />
     </div>
   );
 }

@@ -20,10 +20,10 @@ export function SectionShell({
     <section
       id={id}
       className={cn(
-        "relative scroll-mt-28 py-16 sm:py-20 lg:py-24",
+        "relative scroll-mt-28 py-8 sm:py-10 lg:py-12",
         tone === "muted" && "bg-muted/35",
         tone === "accent" &&
-          "bg-section-wash [background-size:auto] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-border/70 before:content-['']",
+        "bg-section-wash [background-size:auto] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-border/70 before:content-['']",
         className,
       )}
     >

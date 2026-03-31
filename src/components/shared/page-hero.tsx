@@ -25,7 +25,7 @@ export function PageHero({
       <div className="absolute inset-0 bg-hero-aurora" />
       <div className="absolute inset-0 bg-grid bg-grid opacity-[0.06]" />
       <div className="relative">
-        <div className="container py-16 sm:py-20 lg:py-24">
+        <div className="container py-8 sm:py-10 lg:py-12">
           <div className="max-w-4xl space-y-8">
             {eyebrow ? (
               <Reveal>

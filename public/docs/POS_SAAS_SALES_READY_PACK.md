@@ -2,7 +2,7 @@
 
 ## 1. One-Line Product Pitch (Elevator Pitch)
 
-An all-in-one retail POS that helps businesses sell faster, control stock across locations, and grow revenue through promotions, customer tracking, and clear reporting.
+An all-in-one NSL POS that helps businesses sell faster, control stock across locations, and grow revenue through promotions, customer tracking, and clear reporting.
 
 ## 2. Quick Product Summary (30-sec pitch)
 

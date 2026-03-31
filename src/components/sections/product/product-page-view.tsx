@@ -90,7 +90,7 @@ export function ProductPageView() {
                           ))}
                         </ul>
                       </div>
-                      <div className="rounded-[24px] border border-brand/15 bg-brand/10 p-6">
+                      <div className="rounded-[12px] border border-brand/15 bg-brand/10 p-6">
                         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
                           Why it matters
                         </p>

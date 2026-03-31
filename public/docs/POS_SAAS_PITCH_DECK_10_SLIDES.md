@@ -1,7 +1,7 @@
 # POS SaaS Pitch Deck (10 Slides)
 
 ## Slide 1: Title
-**Retail POS That Helps Businesses Sell, Control Stock, and Grow**
+**NSL POS That Helps Businesses Sell, Control Stock, and Grow**
 
 - All-in-one POS for product-based retail businesses
 - Built for single-store retailers and growing multi-branch operations

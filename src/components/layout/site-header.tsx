@@ -54,8 +54,10 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                  active ? "bg-background text-foreground shadow-soft" : "text-muted-foreground hover:text-foreground",
+                  "rounded-full px-4 py-2 text-sm transition-all duration-300",
+                  active 
+                    ? "bg-brand/15 text-brand font-semibold shadow-sm" 
+                    : "text-muted-foreground font-medium hover:text-foreground hover:bg-muted/50",
                 )}
               >
                 {item.label}
@@ -96,10 +98,10 @@ export function SiteHeader() {
                       key={item.href}
                       href={item.href}
                       className={cn(
-                        "rounded-2xl border px-4 py-3 text-sm font-medium transition-colors",
+                        "rounded-2xl border px-4 py-3 text-sm transition-all duration-300",
                         active
-                          ? "border-brand/30 bg-brand/10 text-foreground"
-                          : "border-border/70 text-muted-foreground hover:border-brand/20 hover:text-foreground",
+                          ? "border-brand/30 bg-brand/10 text-brand font-semibold shadow-sm"
+                          : "border-border/70 text-muted-foreground font-medium hover:border-brand/20 hover:text-foreground hover:bg-muted/30",
                       )}
                     >
                       {item.label}

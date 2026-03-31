@@ -100,7 +100,7 @@ Logo  ·  Home  ·  Product  ·  Solutions  ·  Sales Hub  ·  Pricing  ·  Docu
 │                                                          │
 │  ╔══════════════════════════════════════════════════════╗ │
 │  ║  HERO SECTION                                       ║ │
-│  ║  Headline: "Retail POS That Helps Businesses        ║ │
+│  ║  Headline: "NSL POS That Helps Businesses        ║ │
 │  ║            Sell, Control Stock, and Grow"            ║ │
 │  ║  Sub-headline: One-liner from Sales Pack             ║ │
 │  ║  [Explore Product]  [View Pricing]                  ║ │

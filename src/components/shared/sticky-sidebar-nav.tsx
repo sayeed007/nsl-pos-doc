@@ -14,7 +14,7 @@ export function StickySidebarNav({
 
   return (
     <nav className="sticky top-28 hidden xl:block">
-      <div className="space-y-2 rounded-[24px] border border-border/70 bg-card/70 p-4 shadow-soft">
+      <div className="space-y-2 rounded-[12px] border border-border/70 bg-card/70 p-4 shadow-soft">
         <p className="px-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           On this page
         </p>

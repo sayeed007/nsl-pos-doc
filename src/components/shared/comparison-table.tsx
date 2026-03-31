@@ -17,7 +17,7 @@ export function ComparisonTable({
 }) {
   return (
     <>
-      <div className="hidden overflow-hidden rounded-[24px] border border-border/70 bg-card/80 shadow-soft lg:block">
+      <div className="hidden overflow-hidden rounded-[12px] border border-border/70 bg-card/80 shadow-soft lg:block">
         <Table>
           <TableHeader>
             <TableRow>
