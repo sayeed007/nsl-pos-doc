@@ -23,7 +23,7 @@ export function PageHero({
   return (
     <section className={cn("relative overflow-hidden border-b border-border/60", className)}>
       <div className="absolute inset-0 bg-hero-aurora" />
-      <div className="absolute inset-0 bg-grid bg-grid opacity-[0.06]" />
+      <div className="absolute inset-0 bg-grid opacity-[0.06]" />
       <div className="relative">
         <div className="container py-8 sm:py-10 lg:py-12">
           <div className="max-w-4xl space-y-8">
@@ -50,7 +50,7 @@ export function PageHero({
                   {chips.map((chip) => (
                     <span
                       key={chip}
-                      className="rounded-full border border-border/70 bg-card/80 px-4 py-2 text-sm text-muted-foreground shadow-soft"
+                      className="rounded-md border border-border/70 bg-card/80 px-4 py-2 text-sm text-muted-foreground shadow-soft"
                     >
                       {chip}
                     </span>

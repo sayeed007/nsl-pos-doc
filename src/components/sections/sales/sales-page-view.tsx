@@ -36,9 +36,9 @@ export function SalesPageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {salesPageData.whyItSells.map((item, index) => (
             <Reveal key={item} delay={index * 0.03}>
-              <Card className="h-full p-5">
+              <Card className="h-full p-5 flex items-center">
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 size-5 text-brand" />
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
                   <p className="text-sm leading-6 text-foreground">{item}</p>
                 </div>
               </Card>
@@ -88,9 +88,9 @@ export function SalesPageView() {
             <div className="mt-8 grid gap-4">
               {salesPageData.marketingTalkingPoints.map((item, index) => (
                 <Reveal key={item} delay={index * 0.03}>
-                  <Card className="p-5">
+                  <Card className="p-5 flex items-center">
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 size-5 text-brand" />
+                      <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
                       <p className="text-sm leading-6 text-foreground">{item}</p>
                     </div>
                   </Card>

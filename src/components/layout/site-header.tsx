@@ -55,8 +55,8 @@ export function SiteHeader() {
                 href={item.href}
                 className={cn(
                   "rounded-full px-4 py-2 text-sm transition-all duration-300",
-                  active 
-                    ? "bg-brand/15 text-brand font-semibold shadow-sm" 
+                  active
+                    ? "bg-brand/15 text-brand font-semibold shadow-sm"
                     : "text-muted-foreground font-medium hover:text-foreground hover:bg-muted/50",
                 )}
               >
@@ -98,7 +98,7 @@ export function SiteHeader() {
                       key={item.href}
                       href={item.href}
                       className={cn(
-                        "rounded-2xl border px-4 py-3 text-sm transition-all duration-300",
+                        "rounded-[12px] border px-4 py-3 text-sm transition-all duration-300",
                         active
                           ? "border-brand/30 bg-brand/10 text-brand font-semibold shadow-sm"
                           : "border-border/70 text-muted-foreground font-medium hover:border-brand/20 hover:text-foreground hover:bg-muted/30",

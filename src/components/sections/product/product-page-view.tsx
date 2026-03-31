@@ -46,9 +46,9 @@ export function ProductPageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {productPageData.sellingPoints.map((point, index) => (
             <Reveal key={point} delay={index * 0.03}>
-              <Card className="h-full p-5">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 size-5 text-brand" />
+              <Card className="h-full p-5 flex items-center">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
                   <p className="text-sm leading-6 text-foreground">{point}</p>
                 </div>
               </Card>
@@ -58,17 +58,22 @@ export function ProductPageView() {
       </SectionShell>
 
       <SectionShell id="capabilities">
-        <div className="grid gap-10 xl:grid-cols-[280px_minmax(0,1fr)]">
-          <StickySidebarNav items={sidebarItems} />
+        <SectionHeading
+          eyebrow="Capabilities"
+          title="Detailed operational capabilities"
+          description="Each capability block below preserves the business meaning from the overview, including the original why-it-matters framing."
+        />
+        <div className="mt-6 xl:hidden">
+          <StickySidebarNav items={sidebarItems} variant="mobile" />
+        </div>
+        <div className="mt-10 grid gap-10 xl:grid-cols-[280px_minmax(0,1fr)] xl:items-start">
+          <div className="hidden xl:self-start xl:sticky xl:top-28 xl:block">
+            <StickySidebarNav items={sidebarItems} />
+          </div>
           <div className="space-y-6">
-            <SectionHeading
-              eyebrow="Capabilities"
-              title="Detailed operational capabilities"
-              description="Each capability block below preserves the business meaning from the overview, including the original why-it-matters framing."
-            />
             {productPageData.capabilities.map((capability, index) => (
               <Reveal key={capability.id} delay={index * 0.03}>
-                <article id={capability.id} className="scroll-mt-28">
+                <article id={capability.id} className="scroll-mt-40 xl:scroll-mt-28">
                   <Card className="overflow-hidden p-6 sm:p-8">
                     <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
                       <div className="space-y-5">
@@ -140,7 +145,7 @@ export function ProductPageView() {
                   <div className="space-y-5">
                     <div className="space-y-3">
                       {workflow.steps.map((step, stepIndex) => (
-                        <div key={step} className="flex gap-4 rounded-2xl border border-border/70 bg-muted/35 p-4">
+                        <div key={step} className="flex items-center gap-4 rounded-[12px] border border-border/70 bg-muted/35 p-2">
                           <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand/10 text-sm font-semibold text-brand">
                             {stepIndex + 1}
                           </div>
@@ -148,7 +153,7 @@ export function ProductPageView() {
                         </div>
                       ))}
                     </div>
-                    <div className="rounded-2xl border border-highlight/20 bg-highlight/10 p-5">
+                    <div className="rounded-[12px] border border-highlight/20 bg-highlight/10 p-5">
                       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-highlight">
                         Business outcome
                       </p>
@@ -169,58 +174,67 @@ export function ProductPageView() {
           description="The website keeps the original guardrails so future messaging stays aligned with the source material."
         />
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
-          <Card className="p-6">
+          {/* Strongest positioning — emerald/green (positive signal) */}
+          <Card className="p-6 bg-emerald-500/5 border-emerald-500/15 hover:bg-emerald-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Strongest positioning</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {productPageData.positioning.strongest.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-brand" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-emerald-500" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
-          <Card className="p-6">
+
+          {/* Sales conversations — blue (active/action) */}
+          <Card className="p-6 bg-blue-500/5 border-blue-500/15 hover:bg-blue-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Sales conversations</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {productPageData.positioning.strongestSalesConversations.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-highlight" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-blue-500" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
-          <Card className="p-6">
+
+          {/* Less supported — slate/muted (neutral caution) */}
+          <Card className="p-6 bg-slate-500/5 border-slate-500/15 hover:bg-slate-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Less supported angles</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {productPageData.positioning.lessSupported.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-muted-foreground" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-slate-400" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
         </div>
+
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          <Card className="p-6">
+          {/* Talking points — amber (highlight/pitch) */}
+          <Card className="p-6 bg-amber-500/5 border-amber-500/15 hover:bg-amber-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Sales talking points</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {productPageData.talkingPoints.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-brand" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-amber-500" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
-          <Card className="p-6">
+
+          {/* Validation notes — purple (credibility/trust) */}
+          <Card className="p-6 bg-purple-500/5 border-purple-500/15 hover:bg-purple-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Validation notes</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {productPageData.validationNotes.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-highlight" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-purple-500" />
                   <span>{item}</span>
                 </li>
               ))}

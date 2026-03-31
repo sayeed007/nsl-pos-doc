@@ -19,6 +19,10 @@ export const solutionsPageData = {
         "Uses Excel, notebook tracking, or a basic POS and keeps running into stock mistakes.",
       need:
         "It brings selling and stock control together, so they spend less time fixing manual errors.",
+      styles: {
+        card: "bg-blue-500/5 border-blue-500/15 hover:bg-blue-500/10",
+        icon: "bg-blue-500/20 text-blue-700 border-blue-500/30 group-hover:bg-blue-500/30",
+      },
     },
     {
       icon: "branches",
@@ -27,6 +31,10 @@ export const solutionsPageData = {
         "Has more than one outlet and struggles to see where stock is or how branches are performing.",
       need:
         "It gives centralized control over products, stock by location, transfers, and reporting.",
+      styles: {
+        card: "bg-emerald-500/5 border-emerald-500/15 hover:bg-emerald-500/10",
+        icon: "bg-emerald-500/20 text-emerald-700 border-emerald-500/30 group-hover:bg-emerald-500/30",
+      },
     },
     {
       icon: "campaign",
@@ -35,6 +43,10 @@ export const solutionsPageData = {
         "Runs discounts often but staff apply them inconsistently or manually.",
       need:
         "It helps the business run structured offers and sell more without discount confusion.",
+      styles: {
+        card: "bg-amber-500/5 border-amber-500/15 hover:bg-amber-500/10",
+        icon: "bg-amber-500/20 text-amber-700 border-amber-500/30 group-hover:bg-amber-500/30",
+      },
     },
     {
       icon: "insight",
@@ -43,6 +55,10 @@ export const solutionsPageData = {
         "Cannot quickly tell what is selling, what stock is low, or how money is being collected.",
       need:
         "It gives a daily view of revenue, orders, payment mix, product performance, and stock risk.",
+      styles: {
+        card: "bg-rose-500/5 border-rose-500/15 hover:bg-rose-500/10",
+        icon: "bg-rose-500/20 text-rose-700 border-rose-500/30 group-hover:bg-rose-500/30",
+      },
     },
     {
       icon: "repeat",
@@ -51,6 +67,10 @@ export const solutionsPageData = {
         "Has customer traffic but no reliable way to track buyers, loyalty activity, or repeat business.",
       need:
         "It helps turn customer data into repeat sales through profiles, history, and loyalty tracking.",
+      styles: {
+        card: "bg-purple-500/5 border-purple-500/15 hover:bg-purple-500/10",
+        icon: "bg-purple-500/20 text-purple-700 border-purple-500/30 group-hover:bg-purple-500/30",
+      },
     },
   ],
   problemsSolved: [
@@ -124,30 +144,50 @@ export const solutionsPageData = {
       title: "Two-store stock visibility",
       description:
         "A retailer with two or more stores tracks stock by branch and avoids stock confusion.",
+      styles: {
+        card: "bg-blue-500/5 border-blue-500/15 hover:bg-blue-500/10",
+        icon: "bg-blue-500/20 text-blue-700 border-blue-500/30 group-hover:bg-blue-500/30",
+      },
     },
     {
       icon: "barcode",
       title: "Variant-heavy checkout",
       description:
         "A fashion or specialty store manages sizes and variants more accurately at checkout.",
+      styles: {
+        card: "bg-emerald-500/5 border-emerald-500/15 hover:bg-emerald-500/10",
+        icon: "bg-emerald-500/20 text-emerald-700 border-emerald-500/30 group-hover:bg-emerald-500/30",
+      },
     },
     {
       icon: "campaign",
       title: "Structured campaign execution",
       description:
         "A promotion-heavy retailer launches structured campaigns instead of relying on staff memory.",
+      styles: {
+        card: "bg-amber-500/5 border-amber-500/15 hover:bg-amber-500/10",
+        icon: "bg-amber-500/20 text-amber-700 border-amber-500/30 group-hover:bg-amber-500/30",
+      },
     },
     {
       icon: "insight",
       title: "Owner decision support",
       description:
         "An owner reviews dashboards and reports to make faster decisions.",
+      styles: {
+        card: "bg-rose-500/5 border-rose-500/15 hover:bg-rose-500/10",
+        icon: "bg-rose-500/20 text-rose-700 border-rose-500/30 group-hover:bg-rose-500/30",
+      },
     },
     {
       icon: "returns",
       title: "Cleaner return handling",
       description:
         "A store team handles returns against original sales and keeps inventory cleaner.",
+      styles: {
+        card: "bg-purple-500/5 border-purple-500/15 hover:bg-purple-500/10",
+        icon: "bg-purple-500/20 text-purple-700 border-purple-500/30 group-hover:bg-purple-500/30",
+      },
     },
   ],
 } as const;

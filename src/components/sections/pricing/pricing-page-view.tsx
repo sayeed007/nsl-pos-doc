@@ -49,7 +49,7 @@ export function PricingPageView() {
                     <ul className="mt-4 space-y-3 text-sm leading-6 text-foreground">
                       {tier.includes.map((item) => (
                         <li key={item} className="flex gap-3">
-                          <CheckCircle2 className="mt-0.5 size-4 text-brand" />
+                          <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -77,9 +77,9 @@ export function PricingPageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {pricingPageData.whyCustomersBuy.map((item, index) => (
             <Reveal key={item} delay={index * 0.03}>
-              <Card className="h-full p-5">
+              <Card className="h-full p-5 flex items-center">
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 size-5 text-brand" />
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
                   <p className="text-sm leading-6 text-foreground">{item}</p>
                 </div>
               </Card>

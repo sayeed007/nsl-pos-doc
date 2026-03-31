@@ -15,7 +15,7 @@ export function IconChip({
   return (
     <div
       className={cn(
-        "flex size-12 items-center justify-center rounded-2xl border border-brand/15 bg-brand/10 text-brand shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:bg-brand/15",
+        "flex size-12 items-center justify-center rounded-[12px] border border-brand/15 bg-brand/10 text-brand shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:bg-brand/15",
         className,
       )}
     >

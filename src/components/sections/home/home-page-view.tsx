@@ -70,19 +70,19 @@ function HeroVisual() {
                   Owner view
                 </p>
                 <div className="mt-4 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-border/70 bg-background/70 p-3">
+                  <div className="rounded-[12px] border border-border/70 bg-background/70 p-3">
                     <p className="text-xs text-muted-foreground">Revenue</p>
                     <p className="mt-1 font-display text-xl text-foreground">Live</p>
                   </div>
-                  <div className="rounded-2xl border border-border/70 bg-background/70 p-3">
+                  <div className="rounded-[12px] border border-border/70 bg-background/70 p-3">
                     <p className="text-xs text-muted-foreground">Low stock</p>
                     <p className="mt-1 font-display text-xl text-foreground">Visible</p>
                   </div>
-                  <div className="rounded-2xl border border-border/70 bg-background/70 p-3">
+                  <div className="rounded-[12px] border border-border/70 bg-background/70 p-3">
                     <p className="text-xs text-muted-foreground">Payments</p>
                     <p className="mt-1 font-display text-xl text-foreground">Tracked</p>
                   </div>
-                  <div className="rounded-2xl border border-border/70 bg-background/70 p-3">
+                  <div className="rounded-[12px] border border-border/70 bg-background/70 p-3">
                     <p className="text-xs text-muted-foreground">Offers</p>
                     <p className="mt-1 font-display text-xl text-foreground">Planned</p>
                   </div>
@@ -173,7 +173,7 @@ export function HomePageView() {
             <Reveal key={item} delay={index * 0.03}>
               <Card className="h-full p-5 flex items-center">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="mt-0.5 size-5 text-brand" />
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
                   <p className="text-sm leading-6 text-foreground">{item}</p>
                 </div>
               </Card>

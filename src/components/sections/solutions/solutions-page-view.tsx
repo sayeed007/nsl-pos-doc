@@ -11,6 +11,7 @@ import { SectionShell } from "@/components/shared/section-shell";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export function SolutionsPageView() {
   return (
@@ -35,22 +36,22 @@ export function SolutionsPageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {solutionsPageData.personas.map((persona, index) => (
             <Reveal key={persona.title} delay={index * 0.03}>
-              <Card className="h-full p-6">
+              <Card className={cn("h-full p-6", persona.styles?.card)}>
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
-                    <IconChip icon={persona.icon} />
+                    <IconChip icon={persona.icon} className={persona.styles?.icon} />
                     <div className="space-y-2">
                       <h3 className="font-display text-xl font-semibold text-foreground">{persona.title}</h3>
                       <Badge variant="outline">Persona fit</Badge>
                     </div>
                   </div>
-                  <div className="rounded-2xl border border-border/70 bg-muted/35 p-4">
+                  <div className="rounded-[12px] border border-border/70 bg-muted/35 p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Current problem
                     </p>
                     <p className="mt-2 text-sm leading-7 text-foreground">{persona.problem}</p>
                   </div>
-                  <div className="rounded-2xl border border-brand/15 bg-brand/10 p-4">
+                  <div className="rounded-[12px] border border-brand/15 bg-brand/10 p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
                       Why they need this
                     </p>
@@ -72,8 +73,8 @@ export function SolutionsPageView() {
         <div className="mt-10 space-y-4">
           {solutionsPageData.problemsSolved.map((item, index) => (
             <Reveal key={item.problem} delay={index * 0.03}>
-              <Card className="p-6">
-                <div className="grid gap-6 lg:grid-cols-[auto_1fr_1fr] lg:items-start">
+              <Card className="px-6 py-3">
+                <div className="grid gap-6 lg:grid-cols-[auto_1fr_1fr] lg:items-center">
                   <IconChip icon={item.icon} className={index % 2 === 0 ? "" : "bg-highlight/10 text-highlight border-highlight/20"} />
                   <div className="space-y-2">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
@@ -81,7 +82,7 @@ export function SolutionsPageView() {
                     </p>
                     <h3 className="font-display text-xl font-semibold text-foreground">{item.problem}</h3>
                   </div>
-                  <div className="rounded-[22px] border border-brand/15 bg-brand/10 p-4">
+                  <div className="rounded-[12px] border border-brand/15 bg-brand/10 p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
                       How this product solves it
                     </p>
@@ -101,22 +102,29 @@ export function SolutionsPageView() {
           description="The business overview is explicit about fit: product-based retail, especially where multi-location stock control and promotions matter."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Card className="p-6">
+          {/* Business types — Blue */}
+          <Card className="p-6 bg-blue-500/5 border-blue-500/15 hover:bg-blue-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Business types</h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
               {solutionsPageData.idealCustomerTypes.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-2 size-1.5 rounded-full bg-brand" />
+                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-blue-500" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </Card>
-          <Card className="p-6">
+
+          {/* Retail categories — Emerald */}
+          <Card className="p-6 bg-emerald-500/5 border-emerald-500/15 hover:bg-emerald-500/10">
             <h3 className="font-display text-xl font-semibold text-foreground">Retail categories</h3>
             <div className="mt-4 flex flex-wrap gap-3">
               {solutionsPageData.retailCategories.map((category) => (
-                <Badge key={category} variant="outline" className="rounded-full px-4 py-2 text-sm">
+                <Badge 
+                  key={category} 
+                  variant="outline" 
+                  className="rounded-full px-4 py-2 text-sm border-emerald-500/20 bg-emerald-500/10 text-emerald-700 hover:bg-emerald-500/15"
+                >
                   {category}
                 </Badge>
               ))}
@@ -134,9 +142,9 @@ export function SolutionsPageView() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {solutionsPageData.useCases.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.03}>
-              <Card className="h-full p-6">
-                <div className="space-y-4">
-                  <IconChip icon={item.icon} />
+              <Card className={cn("h-full p-6", item.styles?.card)}>
+                <div className="space-y-4 flex flex-col items-center text-center">
+                  <IconChip icon={item.icon} className={item.styles?.icon} />
                   <div className="space-y-2">
                     <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
                     <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>

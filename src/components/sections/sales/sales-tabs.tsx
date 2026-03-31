@@ -61,9 +61,9 @@ export function SalesTabs({
             >
               {sellingPoints.map((point, index) => (
                 <Reveal key={point} delay={index * 0.03}>
-                  <Card className="h-full p-5">
+                  <Card className="h-full p-5 flex items-center">
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 size-5 text-brand" />
+                      <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" />
                       <p className="text-sm leading-6 text-foreground">{point}</p>
                     </div>
                   </Card>
@@ -94,13 +94,13 @@ export function SalesTabs({
                         Conversation hook
                       </div>
                       <div className="space-y-3">
-                        <div className="rounded-2xl border border-border/70 bg-muted/40 p-4">
+                        <div className="rounded-[12px] border border-border/70 bg-muted/40 p-4">
                           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                             If they say
                           </p>
                           <p className="mt-2 text-sm leading-6 text-foreground">{item.trigger}</p>
                         </div>
-                        <div className="rounded-2xl border border-brand/15 bg-brand/10 p-4">
+                        <div className="rounded-[12px] border border-brand/15 bg-brand/10 p-4">
                           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
                             You say
                           </p>
@@ -131,7 +131,7 @@ export function SalesTabs({
                 <Reveal key={item.step} delay={index * 0.03}>
                   <Card className="p-6">
                     <div className="grid gap-5 lg:grid-cols-[auto_1fr]">
-                      <div className="flex size-12 items-center justify-center rounded-2xl border border-brand/20 bg-brand/10 text-base font-semibold text-brand">
+                      <div className="flex size-12 items-center justify-center rounded-[12px] border border-brand/20 bg-brand/10 text-base font-semibold text-brand">
                         {index + 1}
                       </div>
                       <div className="space-y-4">
@@ -139,13 +139,13 @@ export function SalesTabs({
                           {item.step}
                         </h3>
                         <div className="grid gap-4 md:grid-cols-2">
-                          <div className="rounded-2xl border border-border/70 bg-muted/35 p-4">
+                          <div className="rounded-[12px] border border-border/70 bg-muted/35 p-4">
                             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                               What to show
                             </p>
                             <p className="mt-2 text-sm leading-6 text-foreground">{item.show}</p>
                           </div>
-                          <div className="rounded-2xl border border-highlight/20 bg-highlight/10 p-4">
+                          <div className="rounded-[12px] border border-highlight/20 bg-highlight/10 p-4">
                             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-highlight">
                               What to say
                             </p>
